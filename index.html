@@ -31,67 +31,67 @@
       flex-wrap: wrap;
       gap: 2em;
       z-index: 1;
-      max-width: 900px;
-      background: rgba(255 255 255 / 0.15);
-      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
       box-shadow: 0 0 30px rgba(233, 30, 99, 0.4);
-      backdrop-filter: blur(10px);
+      max-width: 900px;
     }
 
     .text {
-      max-width: 450px;
+      max-width: 400px;
       color: #fff;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
     }
 
     h1 {
       font-size: 3em;
-      margin-bottom: 0.2em;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+      margin-bottom: 0.3em;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
     }
 
     p {
-      font-size: 1.5em;
-      margin-bottom: 1.5em;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      font-size: 1.3em;
+      margin-bottom: 2em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
 
-    button.poema-btn {
-      background: #fff;
+    button {
+      background-color: #fff;
       color: #e91e63;
       border: none;
-      padding: 15px 40px;
+      padding: 15px 30px;
       border-radius: 30px;
       font-size: 1.2em;
-      font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 8px 15px rgba(233, 30, 99, 0.4);
       transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+      font-family: 'Pacifico', cursive;
     }
-    button.poema-btn:hover {
-      background: #e91e63;
+
+    button:hover {
+      background-color: #e91e63;
       color: #fff;
-      box-shadow: 0 12px 20px rgba(233, 30, 99, 0.7);
-      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(233, 30, 99, 0.7);
     }
 
     .image-container img {
-      width: 300px;
+      width: 320px;
       max-width: 100%;
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      user-select: none;
     }
 
-    /* Corazones flotantes */
+    /* Corazones animados fondo */
     .hearts {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
       z-index: 0;
+      pointer-events: none;
     }
 
     .heart {
@@ -115,88 +115,114 @@
       }
     }
 
-    /* Modal styles */
+    /* Modal Poema */
     .modal {
-      display: none;
       position: fixed;
-      z-index: 100;
-      left: 0; top: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      box-sizing: border-box;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(255, 0, 79, 0.15);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(233, 30, 99, 0.7);
+      border-radius: 25px;
+      padding: 10px;
+      width: 380px;
+      max-height: 480px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease-in-out;
+      z-index: 10;
+    }
+
+    .modal.show {
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .modal-content {
       background: #fff0f6;
       color: #b0003a;
-      max-width: 400px;
       border-radius: 20px;
-      padding: 25px 30px 35px 30px;
+      padding: 20px 30px 30px 30px;
       box-shadow: 0 0 30px rgba(233, 30, 99, 0.6);
       font-family: 'Georgia', serif;
-      font-size: 1.1em;
+      font-size: 1em;
       line-height: 1.5;
-      position: relative;
+      flex-grow: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       text-align: left;
+      position: relative;
+    }
+
+    .poem-text {
+      overflow-y: auto;
+      padding-right: 10px;
+      margin-top: 8px;
+      flex-grow: 1;
+      scrollbar-width: thin;
+      scrollbar-color: #e91e63 #ffe6f0;
+    }
+
+    .poem-text::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .poem-text::-webkit-scrollbar-thumb {
+      background-color: #e91e63;
+      border-radius: 10px;
+    }
+
+    .poem-text::-webkit-scrollbar-track {
+      background: #ffe6f0;
     }
 
     .modal-content h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
+      font-size: 1.6em;
+      margin-bottom: 5px;
       font-family: 'Pacifico', cursive;
       color: #e91e63;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-    }
-
-    /* Corazón SVG al lado del título */
-    .modal-content h2 svg {
-      width: 28px;
-      height: 28px;
-      fill: #e91e63;
-      filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
-    }
-
-    .modal-content p {
-      margin: 1em 0 0 0;
-      white-space: pre-line;
+      gap: 8px;
     }
 
     .close-btn {
       position: absolute;
-      top: 12px;
-      right: 18px;
+      top: 10px;
+      right: 15px;
       background: transparent;
       border: none;
-      font-size: 1.8em;
+      font-size: 1.6em;
       color: #e91e63;
       cursor: pointer;
       font-weight: bold;
       transition: color 0.3s ease;
-      line-height: 1;
+      user-select: none;
     }
 
     .close-btn:hover {
       color: #b0003a;
     }
+
+    /* Corazón pequeño svg estilo */
+    svg {
+      fill: #e91e63;
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <body>
 
-  <div class="hearts" id="hearts"></div>
-
   <div class="container">
     <div class="text">
       <h1>Para Alguien Muy Especial</h1>
-      <p>Este poema es para ti, con todo mi amor y sinceridad.</p>
-      <button class="poema-btn" id="openPoemBtn">Leer Poema</button>
+      <p>Este poema es para ti, que llenas mis días de alegría y mi corazón de amor.</p>
+      <button id="showPoemBtn">Leer Poema</button>
     </div>
     <div class="image-container">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzfjyzEFgbHKdFCPTPv8_CsSI3enpFkfZyYfmvfZ2urs4P2gNNpaVlQ3nXTaatrajMN28&usqp=CAU" alt="Imagen especial" />
@@ -212,73 +238,77 @@
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
       </h2>
-      <p>
-        Si alguna vez dudas de mi amor,<br>
-        mira el fuego suave que guarda mi pecho,<br>
-        un fuego que no quema, sino que abraza,<br>
-        y en cada latido susurra tu nombre deshecho.<br><br>
+      <div class="poem-text">
+        <p>
+          Si alguna vez dudas de mi amor,<br>
+          mira el fuego suave que guarda mi pecho,<br>
+          un fuego que no quema, sino que abraza,<br>
+          y en cada latido susurra tu nombre deshecho.<br><br>
 
-        Recuerda las veces que en silencio te cuidé,<br>
-        los pequeños detalles que nunca olvidé,<br>
-        los días que elegí tu sonrisa proteger,<br>
-        porque amarte es un arte que aprendí a hacer.<br><br>
+          Recuerda las veces que en silencio te cuidé,<br>
+          los pequeños detalles que nunca olvidé,<br>
+          los días que elegí tu sonrisa proteger,<br>
+          porque amarte es un arte que aprendí a hacer.<br><br>
 
-        Mira cómo cada gesto nace del alma,<br>
-        como un susurro dulce que quiere cuidar,<br>
-        sin prisas ni dudas, solo calma,<br>
-        un amor que en silencio te viene a abrazar.<br><br>
+          Mira cómo cada gesto nace del alma,<br>
+          como un susurro dulce que quiere cuidar,<br>
+          sin prisas ni dudas, solo calma,<br>
+          un amor que en silencio te viene a abrazar.<br><br>
 
-        No soy perfecto, pero soy verdad,<br>
-        y en mi alma te ofrezco mi mejor versión,<br>
-        un amor que respeta, que cuida y espera,<br>
-        que se entrega entero, sin ninguna condición.<br><br>
+          No soy perfecto, pero soy verdad,<br>
+          y en mi alma te ofrezco mi mejor versión,<br>
+          un amor que respeta, que cuida y espera,<br>
+          que se entrega entero, sin ninguna condición.<br><br>
 
-        Si alguna vez dudas de mi amor,<br>
-        recuerda todas las veces que te elegí a ti,<br>
-        cada “te amo” dicho desde lo más profundo,<br>
-        y cómo mi amor por ti crece día tras día, sin fin.
-      </p>
+          Si alguna vez dudas de mi amor,<br>
+          recuerda todas las veces que te elegí a ti,<br>
+          cada “te amo” dicho desde lo más profundo,<br>
+          y cómo mi amor por ti crece día tras día, sin fin.
+        </p>
+      </div>
     </div>
   </div>
 
+  <div class="hearts"></div>
+
   <script>
-    // Crear corazones flotantes aleatorios
-    const heartsContainer = document.getElementById('hearts');
+    // Generar corazones animados en el fondo
+    const heartsContainer = document.querySelector('.hearts');
 
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
-      heart.style.width = heart.style.height = (10 + Math.random() * 20) + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      heart.style.width = heart.style.height = (10 + Math.random() * 15) + 'px';
       heartsContainer.appendChild(heart);
 
       setTimeout(() => {
         heart.remove();
-      }, 8000);
+      }, 6000);
     }
 
-    setInterval(createHeart, 300);
+    setInterval(createHeart, 350);
 
-    // Modal controls
-    const openBtn = document.getElementById('openPoemBtn');
-    const modal = document.getElementById('poemModal');
-    const closeBtn = document.getElementById('closePoemBtn');
+    // Control modal poema
+    const showPoemBtn = document.getElementById('showPoemBtn');
+    const poemModal = document.getElementById('poemModal');
+    const closePoemBtn = document.getElementById('closePoemBtn');
 
-    openBtn.addEventListener('click', () => {
-      modal.style.display = 'flex';
+    showPoemBtn.addEventListener('click', () => {
+      poemModal.classList.add('show');
     });
 
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
+    closePoemBtn.addEventListener('click', () => {
+      poemModal.classList.remove('show');
     });
 
-    window.addEventListener('click', (e) => {
-      if(e.target === modal) {
-        modal.style.display = 'none';
+    // Cerrar modal al dar click fuera del contenido
+    poemModal.addEventListener('click', (e) => {
+      if(e.target === poemModal) {
+        poemModal.classList.remove('show');
       }
     });
   </script>
-
 </body>
 </html>
