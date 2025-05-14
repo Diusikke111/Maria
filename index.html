@@ -133,42 +133,54 @@
     .modal-content {
       background: #fff0f6;
       color: #b0003a;
-      max-width: 600px;
+      max-width: 400px;
       border-radius: 20px;
-      padding: 30px 40px;
+      padding: 25px 30px 35px 30px;
       box-shadow: 0 0 30px rgba(233, 30, 99, 0.6);
       font-family: 'Georgia', serif;
-      font-size: 1.2em;
-      line-height: 1.6;
+      font-size: 1.1em;
+      line-height: 1.5;
       position: relative;
       text-align: left;
     }
 
     .modal-content h2 {
-      text-align: center;
-      font-size: 2em;
-      margin-bottom: 20px;
+      font-size: 1.8em;
+      margin-bottom: 10px;
       font-family: 'Pacifico', cursive;
       color: #e91e63;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Corazón SVG al lado del título */
+    .modal-content h2 svg {
+      width: 28px;
+      height: 28px;
+      fill: #e91e63;
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
     }
 
     .modal-content p {
-      margin: 1em 0;
+      margin: 1em 0 0 0;
       white-space: pre-line;
     }
 
     .close-btn {
       position: absolute;
-      top: 15px;
-      right: 20px;
+      top: 12px;
+      right: 18px;
       background: transparent;
       border: none;
-      font-size: 2em;
+      font-size: 1.8em;
       color: #e91e63;
       cursor: pointer;
       font-weight: bold;
       transition: color 0.3s ease;
+      line-height: 1;
     }
 
     .close-btn:hover {
@@ -194,7 +206,12 @@
   <div class="modal" id="poemModal">
     <div class="modal-content">
       <button class="close-btn" id="closePoemBtn">&times;</button>
-      <h2>Si alguna vez dudas de mi amor</h2>
+      <h2>
+        Si alguna vez dudas de mi amor
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </h2>
       <p>
         Si alguna vez dudas de mi amor,<br>
         mira el fuego suave que guarda mi pecho,<br>
