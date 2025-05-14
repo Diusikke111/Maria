@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para mi niña hermosa ❤️​</title>
+  <title>Para Alguien Muy Especial</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
@@ -95,6 +95,28 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
+    .message-box {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      color: #e91e63;
+      padding: 1em 2em;
+      border-radius: 20px;
+      font-size: 1.2em;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      animation: fadeInOut 4s ease-in-out forwards;
+      z-index: 999;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+      10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      90% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    }
+
     .hearts {
       position: absolute;
       top: 0;
@@ -151,14 +173,25 @@
         Esta página es solo una pequeña muestra de cuánto te aprecio. 💖
       </p>
       <div class="buttons">
-        <button onclick="alert('Gracias por estar en mi vida ❤️')">Te quiero</button>
-        <button onclick="alert('¡Eres increíble! ✨')">Sonríe 😊</button>
+        <button onclick="showMessage('Gracias por estar en mi vida ❤️')">Te quiero</button>
+        <button onclick="showMessage('¡Eres increíble, nunca lo olvides! ✨')">Sonríe 😊</button>
       </div>
     </div>
   </div>
 
   <script>
-    // Generar corazones flotantes
+    // Mensaje decorado
+    function showMessage(text) {
+      const message = document.createElement('div');
+      message.className = 'message-box';
+      message.textContent = text;
+      document.body.appendChild(message);
+      setTimeout(() => {
+        message.remove();
+      }, 4000);
+    }
+
+    // Corazones flotantes
     const heartsContainer = document.getElementById('hearts');
     const heartColors = ['#fff', '#ff8fab', '#ffc1cc', '#ffe4e1'];
 
