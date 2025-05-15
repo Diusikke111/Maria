@@ -314,32 +314,37 @@
     <div class="modal-content">
       <button class="close-btn" id="closePausePoemBtn">&times;</button>
       <h2>
-        Amor en pausa
+        Nuestro amor está en pausa
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
       </h2>
       <div class="poem-text">
         <p>
-          Amor en pausa, pero no en olvido,<br>
-          guardo en el pecho tu risa y tu suspiro.<br>
-          Aunque el tiempo nos lleve por caminos distintos,<br>
-          mi corazón aún te busca en cada latido.<br><br>
+          Nuestro amor está en pausa,<br>
+          como el suspiro del viento en calma,<br>
+          esperando el momento justo<br>
+          para volver a bailar juntos en el alma.<br><br>
 
-          No es el final, solo un respiro,<br>
-          una pausa en la historia que juntos escribimos.<br>
-          Y aunque ahora el silencio se hace más fuerte,<br>
-          mi amor por ti permanece firme y abierto.<br><br>
+          Es una pausa que no enfría,<br>
+          sino que guarda con dulzura el sentimiento,<br>
+          como nuestro amor, que aun en silencio,<br>
+          sigue creciendo por dentro.<br><br>
 
-          Espero que el viento te lleve mi canto,<br>
-          que en tus sueños encuentres mi abrazo.<br>
-          Porque en esta pausa, mi alma no olvida,<br>
-          que tú fuiste y serás siempre mi vida.<br><br>
+          Mientras el tiempo se detiene,<br>
+          mi corazón no se rinde ni se cansa,<br>
+          guarda tu nombre en cada instante,<br>
+          y sueña con volver a tu esperanza.<br><br>
 
-          Amor en pausa, no en despedida,<br>
-          guardo la esperanza, la fe y la vida.<br>
-          Cuando el tiempo quiera darnos otra oportunidad,<br>
-          estaré aquí, esperando, con mi corazón en verdad.
+          Esta espera es un dulce puente,<br>
+          que une tus manos con las mías,<br>
+          porque nuestro amor no se acaba,<br>
+          solo descansa para mejores días.<br><br>
+
+          Y si alguna vez lo dudas, amor mío,<br>
+          aquí estoy, fiel y constante,<br>
+          esperando el momento perfecto<br>
+          para amarte nuevamente, vibrante.
         </p>
       </div>
     </div>
@@ -349,82 +354,77 @@
   <div class="modal" id="imageModal">
     <div class="modal-image-content">
       <button class="close-btn" id="closeImageBtn">&times;</button>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzfjyzEFgbHKdFCPTPv8_CsSI3enpFkfZyYfmvfZ2urs4P2gNNpaVlQ3nXTaatrajMN28&usqp=CAU" alt="Imagen especial" />
+      <img src="https://i.imgur.com/ZHjtLEw.jpeg" alt="Imagen especial" />
     </div>
   </div>
 
-  <div class="hearts" aria-hidden="true"></div>
+  <div class="hearts"></div>
 
   <script>
-    // Funciones para abrir y cerrar modales
-    const poemModal = document.getElementById('poemModal');
-    const pausePoemModal = document.getElementById('pausePoemModal');
-    const imageModal = document.getElementById('imageModal');
-
+    // Botones y modales
     const showPoemBtn = document.getElementById('showPoemBtn');
+    const poemModal = document.getElementById('poemModal');
     const closePoemBtn = document.getElementById('closePoemBtn');
 
     const showPausePoemBtn = document.getElementById('showPausePoemBtn');
+    const pausePoemModal = document.getElementById('pausePoemModal');
     const closePausePoemBtn = document.getElementById('closePausePoemBtn');
 
     const showImageBtn = document.getElementById('showImageBtn');
+    const imageModal = document.getElementById('imageModal');
     const closeImageBtn = document.getElementById('closeImageBtn');
 
+    // Abrir modal poema 1
     showPoemBtn.addEventListener('click', () => {
       poemModal.classList.add('show');
     });
 
+    // Cerrar modal poema 1
     closePoemBtn.addEventListener('click', () => {
       poemModal.classList.remove('show');
     });
 
+    // Abrir modal poema 2
     showPausePoemBtn.addEventListener('click', () => {
       pausePoemModal.classList.add('show');
     });
 
+    // Cerrar modal poema 2
     closePausePoemBtn.addEventListener('click', () => {
       pausePoemModal.classList.remove('show');
     });
 
+    // Abrir modal imagen
     showImageBtn.addEventListener('click', () => {
       imageModal.classList.add('show');
     });
 
+    // Cerrar modal imagen
     closeImageBtn.addEventListener('click', () => {
       imageModal.classList.remove('show');
     });
 
-    // Cerrar modales al hacer clic fuera del contenido
-    window.addEventListener('click', (e) => {
-      if (e.target === poemModal) {
-        poemModal.classList.remove('show');
-      } else if (e.target === pausePoemModal) {
-        pausePoemModal.classList.remove('show');
-      } else if (e.target === imageModal) {
-        imageModal.classList.remove('show');
-      }
-    });
-
-    // Animación corazones de fondo
+    // Corazones animados
     const heartsContainer = document.querySelector('.hearts');
 
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+      heart.style.animationDuration = 4 + Math.random() * 3 + 's';
       heart.style.opacity = Math.random();
+      heart.style.fontSize = 10 + Math.random() * 20 + 'px';
       heartsContainer.appendChild(heart);
 
       setTimeout(() => {
         heart.remove();
-      }, 6000);
+      }, 7000);
     }
 
-    setInterval(createHeart, 300);
+    setInterval(createHeart, 400);
   </script>
-
 </body>
 </html>
+
 
    
