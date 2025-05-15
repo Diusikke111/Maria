@@ -86,28 +86,12 @@
       box-shadow: 0 6px 20px rgba(233, 30, 99, 0.7);
     }
 
-    /* Imagen Snoopy adaptada para que se vea completa en móviles */
-    .image-container {
-      max-width: 320px;
-      width: 100%;
-    }
     .image-container img {
-      width: 100%;
-      height: auto;
-      object-fit: contain; /* Para que la imagen no se corte */
+      width: 320px;
+      max-width: 100%;
       border-radius: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       user-select: none;
-      display: block;
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 1em;
-      }
-      .image-container {
-        max-width: 90vw;
-      }
     }
 
     /* Corazones animados fondo */
@@ -291,129 +275,203 @@
     </div>
   </div>
 
-  <!-- Modales (sin cambios, sólo se añadió el modal nuevo abajo) -->
+  <!-- Modal Poema 1 -->
   <div class="modal" id="poemModal">
     <div class="modal-content">
-      <button class="close-btn" id="closePoemModal">&times;</button>
-      <h2>Si dudas de mi amor 💌
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <button class="close-btn" id="closePoemBtn">&times;</button>
+      <h2>
+        Si alguna vez dudas de mi amor
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
       </h2>
       <div class="poem-text">
-        <p>Si dudas de mi amor, mi cielo,</p>
-        <p>mira el sol que nos despierta,</p>
-        <p>las estrellas que te cuento,</p>
-        <p>y el viento que te susurra. </p>
-        <p>Mi amor no tiene dudas,</p>
-        <p>solo un corazón que late,</p>
-        <p>y una alma que te abraza,</p>
-        <p>sin importar lo que pase.</p>
+        <p>
+          Si alguna vez dudas de mi amor,<br>
+          mira el fuego suave que guarda mi pecho,<br>
+          un fuego que no quema, sino que abraza,<br>
+          y en cada latido susurra tu nombre deshecho.<br><br>
+
+          Recuerda las veces que en silencio te cuidé,<br>
+          los pequeños detalles que nunca olvidé,<br>
+          los días que elegí tu sonrisa proteger,<br>
+          porque amarte es un arte que aprendí a hacer.<br><br>
+
+          Mira cómo cada gesto nace del alma,<br>
+          como un susurro dulce que quiere cuidar,<br>
+          sin prisas ni dudas, solo calma,<br>
+          un amor que en silencio te viene a abrazar.<br><br>
+
+          No soy perfecto, pero soy verdad,<br>
+          y en mi alma te ofrezco mi mejor versión,<br>
+          un amor que respeta, que cuida y espera,<br>
+          que se entrega entero, sin ninguna condición.<br><br>
+
+          Si alguna vez dudas de mi amor,<br>
+          recuerda todas las veces que te elegí a ti,<br>
+          cada “te amo” dicho desde lo más profundo,<br>
+          y cómo mi amor por ti crece día tras día, sin fin.
+        </p>
       </div>
     </div>
   </div>
 
-  <div class="modal" id="pauseModal">
+  <!-- Modal Poema 2 -->
+  <div class="modal" id="pausePoemModal">
     <div class="modal-content">
-      <button class="close-btn" id="closePauseModal">&times;</button>
-      <h2>Amor en pausa 💌
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <button class="close-btn" id="closePausePoemBtn">&times;</button>
+      <h2>
+        Nuestro amor está en pausa
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
       </h2>
       <div class="poem-text">
-        <p>En este tiempo en pausa,</p>
-        <p>mi corazón no se aleja,</p>
-        <p>solo espera el momento,</p>
-        <p>para amarte con más fuerza.</p>
+        <p>
+          Nuestro amor está en pausa,<br>
+          como el suspiro del viento en calma,<br>
+          esperando el momento justo<br>
+          para volver a bailar juntos en el alma.<br><br>
+
+          Es una pausa que no enfría,<br>
+          sino que guarda con dulzura el sentimiento,<br>
+          como nuestro amor, que aun en silencio,<br>
+          sigue creciendo por dentro.<br><br>
+
+          Mientras el tiempo se detiene,<br>
+          mi corazón no se rinde ni se cansa,<br>
+          guarda tu nombre en cada instante,<br>
+          y sueña con volver a tu esperanza.<br><br>
+
+          Esta espera es un dulce puente,<br>
+          que une tus manos con las mías,<br>
+          porque nuestro amor no se acaba,<br>
+          solo descansa para mejores días.<br><br>
+
+          Y si alguna vez lo dudas, amor mío,<br>
+          aquí estoy, fiel y constante,<br>
+          esperando el momento justo<br>
+          para tomar tu mano y seguir adelante.
+        </p>
       </div>
     </div>
   </div>
 
-  <div class="modal" id="newPoemModal">
-    <div class="modal-content">
-      <button class="close-btn" id="closeNewPoemModal">&times;</button>
-      <h2>La mujer que me enamore 💌
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-      </h2>
-      <div class="modal-flex">
-        <img src="https://i.pinimg.com/736x/4a/86/62/4a866224a6b6b228abb295d4d3021a20.jpg" alt="Mujer enamorada" />
-        <div class="poem-text">
-          <p>La mujer que me enamoré</p>
-          <p>tiene en sus ojos el brillo</p>
-          <p>de una luna que me guía,</p>
-          <p>y en su sonrisa, el sol</p>
-          <p>que alumbra mi camino.</p>
-          <p>Es un fuego dulce y tierno,</p>
-          <p>una calma en la tormenta,</p>
-          <p>la melodía en mi silencio,</p>
-          <p>mi paz y mi alegría.</p>
-          <p>Ella es mi todo, mi vida,</p>
-          <p>mi sueño hecho realidad,</p>
-          <p>y por ella, cada día,</p>
-          <p>renazco en la felicidad.</p>
-        </div>
+  <!-- Modal Nuevo Poema -->
+<div class="modal" id="newPoemModal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeNewPoemBtn">&times;</button>
+    <h2>
+      La mujer que me enamoré
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </h2>
+    <div class="modal-flex">
+      <img src="https://i.imgur.com/8GZbMY0.jpeg" alt="Mujer enamorada" />
+      <div class="poem-text">
+        <p>
+          La mujer que me enamoré<br>
+          tiene un brillo en sus ojos<br>
+          que derrite el frío invierno,<br>
+          es un refugio en la tormenta,<br>
+          un fuego dulce y tierno.<br><br>
+
+          Su risa es la melodía<br>
+          que transforma mis días grises,<br>
+          y su voz, un susurro cálido,<br>
+          que calma mis miedos.<br><br>
+
+          Es fuerte sin perder la ternura,<br>
+          valiente sin dejar de soñar,<br>
+          la mujer que me enamoré<br>
+          es mi hogar, mi paz, mi mar.<br><br>
+
+          En cada gesto, en cada abrazo,<br>
+          encuentro la magia de su alma,<br>
+          y sé que con ella a mi lado,<br>
+          el amor es eterna llama.<br><br>
+
+          Por ella, vivo, por ella respiro,<br>
+          y en su nombre, mi corazón vibra,<br>
+          porque la mujer que me enamoré,<br>
+          es el regalo que siempre quise.<br>
+        </p>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="hearts" id="heartsContainer"></div>
+  <div class="hearts"></div>
 
   <script>
-    // Mostrar modales
-    const showPoemBtn = document.getElementById('showPoemBtn');
-    const poemModal = document.getElementById('poemModal');
-    const closePoemModal = document.getElementById('closePoemModal');
-
-    const showPausePoemBtn = document.getElementById('showPausePoemBtn');
-    const pauseModal = document.getElementById('pauseModal');
-    const closePauseModal = document.getElementById('closePauseModal');
-
-    const showNewPoemBtn = document.getElementById('showNewPoemBtn');
-    const newPoemModal = document.getElementById('newPoemModal');
-    const closeNewPoemModal = document.getElementById('closeNewPoemModal');
-
-    showPoemBtn.addEventListener('click', () => {
-      poemModal.classList.add('show');
-    });
-    closePoemModal.addEventListener('click', () => {
-      poemModal.classList.remove('show');
-    });
-
-    showPausePoemBtn.addEventListener('click', () => {
-      pauseModal.classList.add('show');
-    });
-    closePauseModal.addEventListener('click', () => {
-      pauseModal.classList.remove('show');
-    });
-
-    showNewPoemBtn.addEventListener('click', () => {
-      newPoemModal.classList.add('show');
-    });
-    closeNewPoemModal.addEventListener('click', () => {
-      newPoemModal.classList.remove('show');
-    });
-
-    // Cerrar modal con click fuera
-    window.addEventListener('click', (e) => {
-      if (e.target === poemModal) poemModal.classList.remove('show');
-      if (e.target === pauseModal) pauseModal.classList.remove('show');
-      if (e.target === newPoemModal) newPoemModal.classList.remove('show');
-    });
-
-    // Animación corazones
-    const heartsContainer = document.getElementById('heartsContainer');
+    // Corazones animados en el fondo
+    const heartsContainer = document.querySelector('.hearts');
 
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = 4 + Math.random() * 3 + 's';
-      heart.style.width = 15 + Math.random() * 20 + 'px';
-      heart.style.height = heart.style.width;
+      heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+      heart.style.opacity = Math.random();
+      heart.style.width = heart.style.height = (10 + Math.random() * 20) + 'px';
+
       heartsContainer.appendChild(heart);
+
       setTimeout(() => {
-        heartsContainer.removeChild(heart);
-      }, 7000);
+        heart.remove();
+      }, 6000);
     }
 
-    setInterval(createHeart, 500);
+    setInterval(createHeart, 300);
+
+    // Abrir y cerrar modales
+
+    // Modal 1
+    const showPoemBtn = document.getElementById('showPoemBtn');
+    const poemModal = document.getElementById('poemModal');
+    const closePoemBtn = document.getElementById('closePoemBtn');
+
+    showPoemBtn.addEventListener('click', () => {
+      poemModal.classList.add('show');
+    });
+
+    closePoemBtn.addEventListener('click', () => {
+      poemModal.classList.remove('show');
+    });
+
+    // Modal 2
+    const showPausePoemBtn = document.getElementById('showPausePoemBtn');
+    const pausePoemModal = document.getElementById('pausePoemModal');
+    const closePausePoemBtn = document.getElementById('closePausePoemBtn');
+
+    showPausePoemBtn.addEventListener('click', () => {
+      pausePoemModal.classList.add('show');
+    });
+
+    closePausePoemBtn.addEventListener('click', () => {
+      pausePoemModal.classList.remove('show');
+    });
+
+    // Modal Nuevo Poema
+    const showNewPoemBtn = document.getElementById('showNewPoemBtn');
+    const newPoemModal = document.getElementById('newPoemModal');
+    const closeNewPoemBtn = document.getElementById('closeNewPoemBtn');
+
+    showNewPoemBtn.addEventListener('click', () => {
+      newPoemModal.classList.add('show');
+    });
+
+    closeNewPoemBtn.addEventListener('click', () => {
+      newPoemModal.classList.remove('show');
+    });
+
+    // Cerrar modal si se clickea fuera del contenido
+    window.addEventListener('click', (e) => {
+      if (e.target === poemModal) poemModal.classList.remove('show');
+      if (e.target === pausePoemModal) pausePoemModal.classList.remove('show');
+      if (e.target === newPoemModal) newPoemModal.classList.remove('show');
+    });
   </script>
 
 </body>
