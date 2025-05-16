@@ -266,9 +266,8 @@
       <div class="buttons">
         <button id="showPoemBtn">Si dudas de mi amor 💌</button>
         <button id="showPausePoemBtn">Amor en pausa 💌</button>
+        <!-- Nuevo botón agregado -->
         <button id="showNewPoemBtn">La mujer que me enamore 💌</button>
-        <button id="showImageModalBtn">Una imagen para ti 💌</button>
-        
       </div>
     </div>
     <div class="image-container">
@@ -359,58 +358,50 @@
   </div>
 
   <!-- Modal Nuevo Poema -->
-<div class="modal" id="newPoemModal">
-  <div class="modal-content">
-    <button class="close-btn" id="closeNewPoemBtn">&times;</button>
-    <h2>
-      La mujer que me enamoré
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-    </h2>
-    <div class="modal-flex">
-      <img src="https://i.imgur.com/8GZbMY0.jpeg" alt="Mujer enamorada" />
-      <div class="poem-text">
-        <p>
-          La mujer que me enamoré<br>
-          tiene un brillo en sus ojos<br>
-          que derrite el frío invierno,<br>
-          es un refugio en la tormenta,<br>
-          un fuego dulce y tierno.<br><br>
+  <div class="modal" id="newPoemModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeNewPoemBtn">&times;</button>
+      <h2>
+        La mujer que me enamore
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </h2>
+      <div class="modal-flex">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Mujer enamorada" />
+        <div class="poem-text">
+          <p>
+            La mujer que me enamoré<br>
+            tiene un brillo en sus ojos<br>
+            que derrite el frío invierno,<br>
+            es un refugio en la tormenta,<br>
+            un fuego dulce y tierno.<br><br>
 
-          Su risa es la melodía<br>
-          que transforma mis días grises,<br>
-          y su voz, un susurro cálido,<br>
-          que calma mis miedos.<br><br>
+            Su risa es la melodía<br>
+            que transforma mis días grises,<br>
+            y su voz, un susurro cálido,<br>
+            que calma mis miedos.<br><br>
 
-          Es fuerte sin perder la ternura,<br>
-          valiente sin dejar de soñar,<br>
-          la mujer que me enamoré<br>
-          es mi hogar, mi paz, mi mar.<br><br>
+            Es fuerte sin perder la ternura,<br>
+            valiente sin dejar de soñar,<br>
+            la mujer que me enamoré<br>
+            es mi hogar, mi paz, mi mar.<br><br>
 
-          En cada gesto, en cada abrazo,<br>
-          encuentro la magia de su alma,<br>
-          y sé que con ella a mi lado,<br>
-          el amor es eterna llama.<br><br>
+            En cada gesto, en cada abrazo,<br>
+            encuentro la magia de su alma,<br>
+            y sé que con ella a mi lado,<br>
+            el amor es eterna llama.<br><br>
 
-          Por ella, vivo, por ella respiro,<br>
-          y en su nombre, mi corazón vibra,<br>
-          porque la mujer que me enamoré,<br>
-          es el regalo que siempre quise.<br>
-        </p>
+            Por ella, vivo, por ella respiro,<br>
+            y en su nombre, mi corazón vibra,<br>
+            porque la mujer que me enamoré,<br>
+            es el regalo que siempre quise.<br>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-  <div class="modal" id="imageModal">
-  <div class="modal-content">
-    <button class="close-btn" id="closeImageBtn">&times;</button>
-    <h2>Una imagen para ti</h2>
-    <img src="https://i.imgur.com/Lg3X8Pp.jpeg" alt="Imagen para ti" style="max-width: 100%; border-radius: 10px;" />
-  </div>
-</div>
-  
   <div class="hearts"></div>
 
   <script>
@@ -462,19 +453,6 @@
       pausePoemModal.classList.remove('show');
     });
 
-    // Modal Imagen
-const showImageBtn = document.getElementById('showImageBtn');
-const imageModal = document.getElementById('imageModal');
-const closeImageBtn = document.getElementById('closeImageBtn');
-
-showImageBtn.addEventListener('click', () => {
-  imageModal.classList.add('show');
-});
-
-closeImageBtn.addEventListener('click', () => {
-  imageModal.classList.remove('show');
-});
-
     // Modal Nuevo Poema
     const showNewPoemBtn = document.getElementById('showNewPoemBtn');
     const newPoemModal = document.getElementById('newPoemModal');
@@ -498,6 +476,5 @@ closeImageBtn.addEventListener('click', () => {
 
 </body>
 </html>
-
 
    
