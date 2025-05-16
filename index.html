@@ -268,6 +268,7 @@
         <button id="showPausePoemBtn">Amor en pausa 💌</button>
         <button id="showNewPoemBtn">La mujer que me enamore 💌</button>
         <button id="showImageModalBtn">Una imagen para ti 💌</button>
+        
       </div>
     </div>
     <div class="image-container">
@@ -402,19 +403,11 @@
   </div>
 </div>
 
-  <!-- Modal Imagen Especial -->
-<div class="modal" id="imageModal">
+  <div class="modal" id="imageModal">
   <div class="modal-content">
-    <button class="close-btn" id="closeImageModalBtn">&times;</button>
-    <h2>
-      Una imagen que dice más que mil palabras
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-    </h2>
-    <div class="modal-flex" style="justify-content: center;">
-      <img src="https://i.imgur.com/Lg3X8Pp.jpeg" alt="Imagen especial" />
-    </div>
+    <button class="close-btn" id="closeImageBtn">&times;</button>
+    <h2>Una imagen para ti</h2>
+    <img src="https://i.imgur.com/Lg3X8Pp.jpeg" alt="Imagen para ti" style="max-width: 100%; border-radius: 10px;" />
   </div>
 </div>
   
@@ -468,6 +461,19 @@
     closePausePoemBtn.addEventListener('click', () => {
       pausePoemModal.classList.remove('show');
     });
+
+    // Modal Imagen
+const showImageBtn = document.getElementById('showImageBtn');
+const imageModal = document.getElementById('imageModal');
+const closeImageBtn = document.getElementById('closeImageBtn');
+
+showImageBtn.addEventListener('click', () => {
+  imageModal.classList.add('show');
+});
+
+closeImageBtn.addEventListener('click', () => {
+  imageModal.classList.remove('show');
+});
 
     // Modal Nuevo Poema
     const showNewPoemBtn = document.getElementById('showNewPoemBtn');
