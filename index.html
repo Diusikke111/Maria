@@ -268,7 +268,6 @@
         <button id="showPausePoemBtn">Amor en pausa 💌</button>
         <button id="showNewPoemBtn">La mujer que me enamore 💌</button>
         <button id="showImageBtn">Una imagen para ti 😽</button>
-        <button id="showPoemBtn">Te pienso en cada momento 😻</button>
         
       </div>
     </div>
@@ -414,25 +413,6 @@
   </div>
 </div>
 
-  <!-- Modal Poema -->
-<div class="modal" id="poemEspecialModal" style="display:none;">
-  <div class="modal-content">
-    <button class="close-btn" id="closeEspecialBtn">&times;</button>
-    <h2>
-      Cada día te llevo en mi pensamiento
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="width:24px; height:24px; fill:#ff6b6b; vertical-align: middle; margin-left: 8px;">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-    </h2>
-    <div class="poem-text">
-      <p>
-        Cada día te llevo en mi pensamiento, en el recuerdo que nos hace eternos.<br>
-        "El amor verdadero no muere, se renueva para que sigamos creciendo juntos, más fuertes y apasionados."
-      </p>
-    </div>
-  </div>
-</div>
-
   <div class="hearts"></div>
 
   <script>
@@ -509,26 +489,6 @@
     closeImageBtn.addEventListener('click', () => {
       imageModal.classList.remove('show');
     });
-
-    // Te pienso en cada momento
-    const showPoemBtn = document.getElementById('showPoemBtn');
-    const poemEspecialModal = document.getElementById('poemEspecialModal');
-    const closeEspecialBtn = document.getElementById('closeEspecialBtn');
-
-    showPoemBtn.addEventListener('click', () => {
-      poemEspecialModal.style.display = 'flex';
-    });
-
-    closeEspecialBtn.addEventListener('click', () => {
-      poemEspecialModal.style.display = 'none';
-    });
-
-   // Cerrar modal al hacer click fuera del contenido
-   window.addEventListener('click', (event) => {
-     if(event.target === poemEspecialModal){
-       poemEspecialModal.style.display = 'none';
-     }
-   });
 
     // Cerrar modal si se clickea fuera del contenido
     window.addEventListener('click', (e) => {
