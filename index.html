@@ -498,36 +498,37 @@
     });
 
     // Modal Imagen
-const showImageBtn = document.getElementById('showImageBtn');
-const imageModal = document.getElementById('imageModal');
-const closeImageBtn = document.getElementById('closeImageBtn');
+    const showImageBtn = document.getElementById('showImageBtn');
+    const imageModal = document.getElementById('imageModal');
+    const closeImageBtn = document.getElementById('closeImageBtn');
 
-showImageBtn.addEventListener('click', () => {
-  imageModal.classList.add('show');
-});
+    showImageBtn.addEventListener('click', () => {
+      imageModal.classList.add('show');
+    });
 
-closeImageBtn.addEventListener('click', () => {
-  imageModal.classList.remove('show');
-});
+    closeImageBtn.addEventListener('click', () => {
+      imageModal.classList.remove('show');
+    });
 
-  const showPoemBtn = document.getElementById('showPoemBtn');
-  const poemEspecialModal = document.getElementById('poemEspecialModal');
-  const closeEspecialBtn = document.getElementById('closeEspecialBtn');
+    // Te pienso en cada momento
+    const showPoemBtn = document.getElementById('showPoemBtn');
+    const poemEspecialModal = document.getElementById('poemEspecialModal');
+    const closeEspecialBtn = document.getElementById('closeEspecialBtn');
 
-  showPoemBtn.addEventListener('click', () => {
-    poemEspecialModal.style.display = 'flex';
-  });
+    showPoemBtn.addEventListener('click', () => {
+      poemEspecialModal.style.display = 'flex';
+    });
 
-  closeEspecialBtn.addEventListener('click', () => {
-    poemEspecialModal.style.display = 'none';
-  });
-
-  // Cerrar modal al hacer click fuera del contenido
-  window.addEventListener('click', (event) => {
-    if(event.target === poemEspecialModal){
+    closeEspecialBtn.addEventListener('click', () => {
       poemEspecialModal.style.display = 'none';
-    }
-  });
+    });
+
+   // Cerrar modal al hacer click fuera del contenido
+   window.addEventListener('click', (event) => {
+     if(event.target === poemEspecialModal){
+       poemEspecialModal.style.display = 'none';
+     }
+   });
 
     // Cerrar modal si se clickea fuera del contenido
     window.addEventListener('click', (e) => {
