@@ -268,6 +268,7 @@
         <button id="showPausePoemBtn">Amor en pausa 💌</button>
         <button id="showNewPoemBtn">La mujer que me enamore 💌</button>
         <button id="showImageBtn">Una imagen para ti 😽</button>
+        <button id="showEspecialBtn">Te pienso en cada momento 💘</button>
         
       </div>
     </div>
@@ -397,7 +398,7 @@
     </div>
   </div>
 </div>
-  
+   
     <!-- Modal Imagen -->
 <div class="modal" id="imageModal">
   <div class="modal-content" style="padding: 10px; max-width: 90vw; max-height: 90vh; overflow: auto;">
@@ -412,6 +413,29 @@
          style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); user-select: none; display: block; margin: 0 auto;" />
   </div>
 </div>
+
+     <!-- Modal Poema Especial -->
+<div class="modal" id="poemEspecialModal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeEspecialBtn">&times;</button>
+    <h2>
+      Cada día te llevo en mi pensamiento
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+        2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 
+        4.5 2.09C13.09 3.81 14.76 3 
+        16.5 3 19.58 3 22 5.42 22 8.5c0 
+        3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </h2>
+    <div class="poem-text">
+      <p>
+        Cada día te llevo en mi pensamiento, en el recuerdo que nos hace eternos.<br>
+        "El amor verdadero no muere, se renueva para que sigamos creciendo juntos, más fuertes y apasionados."
+      </p>
+    </div>
+  </div>
+</div> 
 
   <div class="hearts"></div>
 
@@ -489,6 +513,25 @@
     closeImageBtn.addEventListener('click', () => {
       imageModal.classList.remove('show');
     });
+
+    // Nuevo modal te pienso
+     const showEspecialBtn = document.getElementById('showEspecialBtn');
+    const poemEspecialModal = document.getElementById('poemEspecialModal');
+    const closeEspecialBtn = document.getElementById('closeEspecialBtn');
+
+    showEspecialBtn.addEventListener('click', () => {
+      poemEspecialModal.classList.add('show');
+    });
+
+    closeEspecialBtn.addEventListener('click', () => {
+      poemEspecialModal.classList.remove('show');
+    });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === poemEspecialModal) {
+      poemEspecialModal.classList.remove('show');
+    }
+  });
 
     // Cerrar modal si se clickea fuera del contenido
     window.addEventListener('click', (e) => {
