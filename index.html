@@ -268,7 +268,7 @@
         <button id="showPausePoemBtn">Amor en pausa 💌</button>
         <button id="showNewPoemBtn">La mujer que me enamore 💌</button>
         <button id="showImageBtn">Una imagen para ti</button>
-        <button id="showPausePoemBtn">Si algun dia vuelves a leer esto. 💌</button>
+        
       </div>
     </div>
     <div class="image-container">
@@ -486,25 +486,6 @@
       pausePoemModal.classList.remove('show');
     });
     
-    // Amor Renovado
-    const openLoveRenewBtn = document.getElementById('openLoveRenewBtn');
-    const loveRenewModal = document.getElementById('loveRenewModal');
-    const closeLoveRenewBtn = document.getElementById('closeLoveRenewBtn');
-
-    openLoveRenewBtn.addEventListener('click', () => {
-      loveRenewModal.classList.add('show');
-    });
-
-    closeLoveRenewBtn.addEventListener('click', () => {
-      loveRenewModal.classList.remove('show');
-    });
-
-  // Cerrar modal si se hace clic fuera del contenido
-  loveRenewModal.addEventListener('click', (e) => {
-    if (e.target === loveRenewModal) {
-      loveRenewModal.classList.remove('show');
-    }
-  });
     // Modal Nuevo Poema
     const showNewPoemBtn = document.getElementById('showNewPoemBtn');
     const newPoemModal = document.getElementById('newPoemModal');
